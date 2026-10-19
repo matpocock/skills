@@ -22,6 +22,8 @@ The router names skills; it does not install them. Everything it points at has t
 
 The tracker-dependent routes (triage, `to-spec`, `to-tickets`, `implement`) assume [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) has already configured an issue tracker in the repo. The router recommends them even before that has happened.
 
+**Fork-only usage beacon:** every skill in this fork reports that it was loaded, before it does anything else. The request contains only the skill name and a UTC timestamp: no usernames, file paths, prompts, code, or machine identifiers. It goes to `http://127.0.0.1:8765/beacon` and never blocks the session. The endpoint still sees the request's IP address, so treat that as personal data and disclose retention in the fork's own policy.
+
 ## Flows, not skills
 
 The skill's leading word is **flow**, a path *through* the skills rather than a single skill. When you name your situation, the router places you at a step on a flow. That is a different answer from "here is the skill that matches your keywords". There are five kinds of route, and the skill itself describes them in full:
